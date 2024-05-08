@@ -1,0 +1,22 @@
+#home{
+    background-image: linear-gradient(rgba(var(--c-brand-rgb), 0.507),rgba(var(--c-brand-rgb), 0.4)), url("../../../assets/hero1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.btn{
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+.btn-brand{
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+.btn-brand:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}

@@ -1,0 +1,85 @@
+.section-title{
+    margin-bottom: 60px;
+}
+
+.section-title .line{
+    width:60px;
+    height: 4px;
+    background-color: var(--c-brand);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+.btn-brand{
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+.btn-brand:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+
+
+/*Image Zoom*/
+
+.image-zoom{
+    position: relative;
+    overflow: hidden;
+}
+.image-zoom-wrapper{
+    overflow: hidden;
+    position: relative;
+}
+.image-zoom-wrapper img{
+    transition: var(--transition);
+}
+.image-zoom:hover .image-zoom-wrapper img{
+    transform: scale(1.1);
+}
+
+.course-post{
+    background-color: var(--c-brand);
+    margin-bottom: 10px;
+    padding: 24px;
+    transition: var(--transition);
+    opacity: 0.5;
+}
+.course-post:hover {
+    opacity: 1;
+    background-color: var(--c-brand);
+}
+
+/*Use when no images*/
+
+/*USe when images*/
+/* .course-post-content{
+    background-color: var(--c-brand);
+    height: auto;
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    width: calc(100% - 50px);
+    transform: translate(-50%);
+    padding: 24px;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.course-post:hover .course-post-content:hover{
+    opacity: 1;
+    bottom: 24px;
+} */

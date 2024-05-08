@@ -1,0 +1,111 @@
+
+.section-title{
+    margin-bottom: 60px;
+}
+
+.section-title .line{
+    width:60px;
+    height: 4px;
+    background-color: var(--c-brand);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*ICON*/
+.iconbox{
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--c-brand-rgb), 0.1);
+    color: var(--c-brand);
+    font-size: 34px;
+    flex: none;
+}
+.btn{
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+.btn-brand{
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+.btn-brand:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+
+
+/*Scroll*/
+.home-content-services{
+    max-height: 80px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(95, 91, 91, 0.3); 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(95, 91, 91, 0.3); 
+}
+
+.service{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.service::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: rgba(var(--c-brand-rgb), 0.1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: var(--transition);
+}
+
+.service:hover::after{
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-brand);
+    z-index: -1;
+}
+
+.service:hover h5,
+.services p{
+    color: white;
+}
+
+.service:hover,
+.home-content-services:hover li{
+    color: white;
+}
+
+.service:hover .iconbox{
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/*Counter*/
+#counter{
+    background: linear-gradient(rgba(var(--c-brand-rgb), 0.8),rgba(var(--c-brand-rgb), 0.8)), url("../../../assets/counter.jpg");
+    background-position: center;
+    background-size: cover;
+}
