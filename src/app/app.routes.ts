@@ -6,10 +6,11 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { OurServiceComponent } from './pages/our-service/our-service.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'services', component: ServicesComponent},
+    {path: 'ourService', component: OurServiceComponent},
     {path: 'courses', component: CoursesComponent},
     {path: 'about', component: AboutComponent},
     {path: 'contactus', component: ContactUsComponent},

@@ -1,21 +1,17 @@
-
 .section-title{
     margin-bottom: 60px;
 }
-
 .section-title .line{
     width:60px;
     height: 4px;
     background-color: var(--c-brand);
     margin: 16px auto 24px auto;
 }
-
 .section-title p{
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
-
 /*ICON*/
 .iconbox{
     width: 50px;
@@ -46,9 +42,8 @@
     color: white;
 }
 
-
 /*Scroll*/
-.home-content-services{
+.home-content-ourService{
     max-height: 80px;
     overflow-y: scroll;
 }
@@ -63,13 +58,11 @@
     border-radius: 4px;
     -webkit-box-shadow: inset 0 0 6px rgba(95, 91, 91, 0.3); 
 }
-
 .service{
     position: relative;
     overflow: hidden;
     z-index: 2;
 }
-
 .service::after{
     content: "";
     width: 20px;
@@ -80,29 +73,24 @@
     right: 0;
     transition: var(--transition);
 }
-
 .service:hover::after{
     width: 100%;
     height: 100%;
     background-color: var(--c-brand);
     z-index: -1;
 }
-
 .service:hover h5,
 .services p{
     color: white;
 }
-
 .service:hover,
 .home-content-services:hover li{
     color: white;
 }
-
 .service:hover .iconbox{
     background-color: rgba(255,255,255,0.2);
     color: white;
 }
-
 /*Counter*/
 #counter{
     background: linear-gradient(rgba(var(--c-brand-rgb), 0.8),rgba(var(--c-brand-rgb), 0.8)), url("../../../assets/counter.jpg");
