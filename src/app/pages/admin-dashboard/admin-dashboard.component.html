@@ -1,0 +1,64 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <!-- <th scope="col">Checked In</th>
+          <th scope="col">Checked Out</th> -->
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (i of userDa.items; track i.id){
+            <tr>
+              <th scope="row">{{i.user.name}}</th>
+              <td>{{i.user.email}}</td>
+              <!-- <td>{{i.checked_in | date:'medium':'UTC'}}</td>
+              <td>{{i.checked_out | date : 'medium':'UTC +5:30'}}</td> -->
+              <td>
+                <tr>
+                <td>
+                  <button type="button" class="btn btn-brand" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i.user.id" (click)="showDetails(i.user.id)">
+                    Show
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" [attr.id]="'exampleModal' + i.user.id" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel' + i.user.id" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.user.name}}</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <h5>Most recent visit on {{i.checked_in | date:'fullDate':'UTC'}}</h5>
+                          <h6 class="modal-title fs-5">Company:</h6>
+                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_details.client_name}}</p>
+                          <h6 class="modal-title fs-5">Purpose of Visit:</h6>
+                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_details.purpose}}</p>
+                          <h6 class="modal-title fs-5">Expenses:</h6>
+                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.expenses && i.expenses > 0 ? i.expenses : 'No expenses added so far.'}}</p>
+                          <h6 class="modal-title fs-5">Checked-In Location:</h6>
+                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_at?.address ? i.checked_in_at.address : 'No address available.'}} {{i.checked_in ? ('at '+(i.checked_in | date:'mediumTime':'UTC')) : '(Time unavailable)'}}</p>
+                          <h6 class="modal-title fs-5">Checked-Out Location:</h6>
+                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_out_at?.address ? i.checked_out_at.address : (i.user.name+' did not check-out.')}} {{i.checked_out ? ('at '+(i.checked_out | date:'mediumTime':'UTC')) : 'So, the time is unavailable.'}}</p>                         
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group col-lg-12 d-grid">
+                    <button type="button" class="btn btn-brand">EDIT</button>
+                  </div>
+                </td>
+              </tr>
+              </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- <p>{{JSON.stringify(userDa)}}</p> -->
