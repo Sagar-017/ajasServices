@@ -1,3 +1,4 @@
+<app-header-admin></app-header-admin>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -18,33 +19,33 @@
               <td>
                 <tr>
                 <td>
-                  <button type="button" class="btn btn-brand" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i.user.id" (click)="showDetails(i.user.id)">
+                  <button type="button" class="btn btn-brand" data-bs-toggle="modal" [attr.data-bs-target]="'#adminDashboardModal' + i.user.id" (click)="showDetails(i.user.id)">
                     Show
                   </button>
                   
                   <!-- Modal -->
-                  <div class="modal fade" [attr.id]="'exampleModal' + i.user.id" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel' + i.user.id" aria-hidden="true">
+                  <div class="modal fade" [attr.id]="'adminDashboardModal' + i.user.id" tabindex="-1" [attr.aria-labelledby]="'adminDashboardModalLabel' + i.user.id" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.user.name}}</h1>
+                          <h1 class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.user.name}}</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                           <h5>Most recent visit on {{i.checked_in | date:'fullDate':'UTC'}}</h5>
                           <h6 class="modal-title fs-5">Company:</h6>
-                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_details.client_name}}</p>
+                          <p class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.checked_in_details.client_name}}</p>
                           <h6 class="modal-title fs-5">Purpose of Visit:</h6>
-                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_details.purpose}}</p>
+                          <p class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.checked_in_details.purpose}}</p>
                           <h6 class="modal-title fs-5">Expenses:</h6>
-                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.expenses && i.expenses > 0 ? i.expenses : 'No expenses added so far.'}}</p>
+                          <p class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.expenses && i.expenses > 0 ? i.expenses : 'No expenses added so far.'}}</p>
                           <h6 class="modal-title fs-5">Checked-In Location:</h6>
-                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_in_at?.address ? i.checked_in_at.address : 'No address available.'}} {{i.checked_in ? ('at '+(i.checked_in | date:'mediumTime':'UTC')) : '(Time unavailable)'}}</p>
+                          <p class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.checked_in_at?.address ? i.checked_in_at.address : 'No address available.'}} {{i.checked_in ? ('at '+(i.checked_in | date:'mediumTime':'UTC')) : '(Time unavailable)'}}</p>
                           <h6 class="modal-title fs-5">Checked-Out Location:</h6>
-                          <p class="modal-title fs-5" [attr.id]="'exampleModalLabel' + i.user.id">{{i.checked_out_at?.address ? i.checked_out_at.address : (i.user.name+' did not check-out.')}} {{i.checked_out ? ('at '+(i.checked_out | date:'mediumTime':'UTC')) : 'So, the time is unavailable.'}}</p>                         
+                          <p class="modal-title fs-5" [attr.id]="'adminDashboardModalLabel' + i.user.id">{{i.checked_out_at?.address ? i.checked_out_at.address : (i.user.name+' did not check-out.')}} {{i.checked_out ? ('at '+(i.checked_out | date:'mediumTime':'UTC')) : 'So, the time is unavailable.'}}</p>                         
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>
@@ -52,7 +53,7 @@
                 </td>
                 <td>
                   <div class="form-group col-lg-12 d-grid">
-                    <button type="button" class="btn btn-brand">EDIT</button>
+                    <a href="useredit/{{i.user.id}}" class="btn btn-brand ms-lg-3">Edit</a>
                   </div>
                 </td>
               </tr>
@@ -61,4 +62,5 @@
         }
     </tbody>
 </table>
+<app-footer-admin></app-footer-admin>
 <!-- <p>{{JSON.stringify(userDa)}}</p> -->
